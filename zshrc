@@ -95,11 +95,12 @@ fi
 #
 # Example aliases
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias zshconfig="code ~/.zshrc"
-alias ll="ls -alhFc"
-alias up="sudo apt update"
-alias lu="apt list --upgradable"
-alias upg="sudo apt upgrade -y"
+alias zshconfig="nano ~/.zshrc"
+
+# Include aliases
+if [ -f $HOME/.aliases ]; then
+	. $HOME/.aliases
+fi
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
