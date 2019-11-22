@@ -1,6 +1,6 @@
 alias ll="ls -alhFc"
 alias myip="curl icanhazip.com"
-alias checknet="ping 8.8.8.8"
+alias checknet="ping -c 4 8.8.8.8"
 # package updates
 alias up="sudo apt update"
 alias lu="apt list --upgradable"
