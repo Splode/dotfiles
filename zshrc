@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/christopher/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -113,3 +113,6 @@ export PATH="$HOME/gems/bin:$PATH"
 # Go
 export GOPATH=$HOME/work
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+
+# Rust
+export PATH=$HOME/.cargo/bin:$PATH
