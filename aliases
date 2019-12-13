@@ -1,6 +1,14 @@
-alias ll="ls -alhFc"
+# use exa if available
+
+if [ -f $(which exa) ]; then
+	alias ll="exa -al"
+	alias ls="exa"
+	alias lt="exa -T"
+fi
+
 alias myip="curl icanhazip.com"
 alias checknet="ping -c 4 8.8.8.8"
+
 # package updates
 alias up="sudo apt update"
 alias lu="apt list --upgradable"
