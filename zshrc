@@ -122,3 +122,5 @@ export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
 # Rust
 export PATH=$HOME/.cargo/bin:$PATH
+
+eval "$(starship init zsh)"
