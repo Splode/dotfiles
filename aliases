@@ -1,6 +1,5 @@
 # use exa if available
-
-if [ -f $(which exa) ]; then
+if [ $(which exa) ]; then
 	alias ll="exa -al"
 	alias ls="exa"
 	alias lt="exa -T"
