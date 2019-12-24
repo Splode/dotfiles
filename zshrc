@@ -129,6 +129,6 @@ export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 export PATH=$HOME/.cargo/bin:$PATH
 
 # Starship prompt
-if [ $(which starship) ]; then
+if [ -x "$(command -v starship)" ]; then
   eval "$(starship init zsh)"
 fi
