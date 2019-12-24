@@ -107,6 +107,11 @@ if [ -d $HOME/bin ]; then
 	export PATH=$PATH:/$HOME/bin
 fi
 
+# Include snaps
+if [ -d /snap ]; then
+	export PATH=$PATH:/snap/bin
+fi
+
 # NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
