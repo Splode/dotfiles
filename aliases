@@ -12,3 +12,10 @@ alias checknet="ping -c 4 8.8.8.8"
 alias up="sudo apt update"
 alias lu="apt list --upgradable"
 alias upg="sudo apt upgrade -y"
+
+# youtube-dl
+if [ -x "$(command -v youtube-dl)" ]; then
+	function mp3() {
+		youtube-dl --ignore-errors -f bestaudio --extract-audio --audio-format mp3 --audio-quality 0 "$1"
+	}
+fi
