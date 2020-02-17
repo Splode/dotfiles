@@ -132,3 +132,8 @@ export PATH=$HOME/.cargo/bin:$PATH
 if [ -x "$(command -v starship)" ]; then
   eval "$(starship init zsh)"
 fi
+
+# direnv
+if [ -x "$(command -v direnv)" ]; then
+  eval "$(direnv hook zsh)"
+fi
