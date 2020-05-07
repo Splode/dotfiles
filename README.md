@@ -1,3 +1,3 @@
 # My Dotfiles
 
-My dotfiles for Unix. That's it.
+My dotfiles for Linux. That's it.

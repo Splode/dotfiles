@@ -15,6 +15,7 @@ alias upg="sudo apt upgrade -y"
 
 # libwebp
 if [ -x "$(command -v cwebp)" ]; then
+# converts images in current directory to webp with a quality of 70
 	function ,webp() {
 		for file in ./*; do cwebp -q 70 "$file" -o "${file%.*}.webp"; done
 	}
@@ -22,6 +23,7 @@ fi
 
 # youtube-dl
 if [ -x "$(command -v youtube-dl)" ]; then
+# extracts the mp3 from a given video link
 	function mp3() {
 		youtube-dl --ignore-errors -f bestaudio --extract-audio --audio-format mp3 --audio-quality 0 "$1"
 	}
