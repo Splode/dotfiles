@@ -13,6 +13,13 @@ alias up="sudo apt update"
 alias lu="apt list --upgradable"
 alias upg="sudo apt upgrade -y"
 
+# libwebp
+if [ -x "$(command -v cwebp)" ]; then
+	function ,webp() {
+		for file in ./*; do cwebp -q 70 "$file" -o "${file%.*}.webp"; done
+	}
+fi
+
 # youtube-dl
 if [ -x "$(command -v youtube-dl)" ]; then
 	function mp3() {

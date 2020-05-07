@@ -137,3 +137,8 @@ fi
 if [ -x "$(command -v direnv)" ]; then
   eval "$(direnv hook zsh)"
 fi
+
+# libwebp
+if [ -d $HOME/bin/libwebp ]; then
+	export PATH=$PATH:/$HOME/bin/libwebp/bin
+fi
