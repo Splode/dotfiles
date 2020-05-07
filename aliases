@@ -13,6 +13,14 @@ alias up="sudo apt update"
 alias lu="apt list --upgradable"
 alias upg="sudo apt upgrade -y"
 
+# ffmpeg
+if [ -x "$(command -v ffmpeg)" ]; then
+# convert all mp4 videos to webm, stripping audio
+ function ,webm() {
+	 for file in ./*.mp4; do ffmpeg -y -i "$file" -c vp9 -b:v 0 -crf 24 -an "${file%.*}.webm"; done 
+ }
+fi
+
 # libwebp
 if [ -x "$(command -v cwebp)" ]; then
 # converts images in current directory to webp with a quality of 70
