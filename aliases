@@ -25,7 +25,8 @@ fi
 if [ -x "$(command -v cwebp)" ]; then
 # converts images in current directory to webp with a quality of 70
 	function ,webp() {
-		for file in ./*; do cwebp -q 70 "$file" -o "${file%.*}.webp"; done
+		local quality=${1:-80}
+		for file in ./*; do cwebp -q "$quality" "$file" -o "${file%.*}.webp"; done
 	}
 fi
 
