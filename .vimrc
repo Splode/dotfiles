@@ -41,6 +41,8 @@ nnoremap <leader><CR>  :so ~/.vimrc<CR>
 nnoremap <C-p> :GFiles<CR>
 " fuzzy find project files
 nnoremap <leader>pf :Files<CR>
+" format current file
+nnoremap <leader>ff :ALEFix<CR>
 
 " ALE plugin configuration
 let b:ale_fixers = ['eslint', 'prettier']
@@ -54,3 +56,7 @@ xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 
+" use git-bash on Windows to enable previews for plugins like fzf, ripgrep
+if has('win32')
+  let $PATH = 'C:\Users\Christopher\scoop\apps\git\current\usr\bin;' . $PATH
+endif
