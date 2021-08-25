@@ -18,19 +18,26 @@ Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 colorscheme dracula " dracula plugin
+set autoindent      " indent according to previous line
 set backspace=2     " start, indent
 set cmdheight=2     " give more space for displaying messages
-set encoding=utf-8  " sane default
 set expandtab       " expand tabs to spaces
+set hidden          " switch between buffers without having to save first
 set number          " show line numbers
+set report=0        " report changed lines
 set scrolloff=8     " auto-scroll margin
 set shiftwidth=2    " number of spaces when shift indenting
 set smartindent     " auto-indent
 set softtabstop=2   " number of spaces in tab when editing
 set tabstop=2       " number of visual spaces per tab
 set termguicolors   " enable true colors support
+set ttyfast         " faster redrawing
 set updatetime=300  " decrease updatetime, speedier refresh
 syntax on           " enable syntax highlighting
+
+" smarter cursorline: toggle off when entering insert mode
+autocmd InsertLeave,WinEnter * set cursorline
+autocmd InsertEnter,WinLeave * set nocursorline
 
 let mapleader = " "
 " project view in vertical split
