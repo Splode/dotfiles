@@ -1,3 +1,3 @@
 # My Dotfiles
 
-My dotfiles for Linux. That's it.
+My config files. That's all.
