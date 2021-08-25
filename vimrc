@@ -9,6 +9,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'mzlogin/vim-markdown-toc'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
@@ -67,3 +68,14 @@ nmap ga <Plug>(EasyAlign)
 if has('win32')
   let $PATH = 'C:\Users\Christopher\scoop\apps\git\current\usr\bin;' . $PATH
 endif
+
+" Function to source only if file exists {
+function! SourceIfExists(file)
+  if filereadable(expand(a:file))
+    exe 'source' a:file
+  endif
+endfunction
+" }
+
+" source coc.vim settings, if present
+call SourceIfExists("~/.coc.vim")
