@@ -13,6 +13,7 @@ New-Alias -Name gpl -Value gitPull
 New-Alias -Name gpu -Value gitPush
 New-Alias -Name gss -Value gitStatus
 New-Alias -Name gaa -Value gitAddAll
+New-Alias -Name gls -Value gitBranchList
 New-Alias -Name touch -Value createFile
 New-Alias -Name sup -Value scoopUpdate -Description "Update scoop repositories"
 New-Alias -Name supg -Value scoopUpgrade
@@ -49,6 +50,10 @@ function gitStatus {
 
 function gitAddAll {
   git add .
+}
+
+function gitBranchList {
+  git branch --list
 }
 
 # Update scoop repos and display status

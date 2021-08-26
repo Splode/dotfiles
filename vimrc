@@ -52,6 +52,17 @@ nnoremap <leader>pf :Files<CR>
 " format current file
 nnoremap <leader>ff :ALEFix<CR>
 
+" yank to system clipboard in normal mode
+nnoremap <leader>y "+y
+" yank to system clipboard in visual mode
+vnoremap <leader>y "+y
+" yank entire file contents to system clipboard
+nnoremap <leader>Y gg"+yG
+
+" move current line up or down
+vnoremap <C-j> :m '>+1<CR>gv=gv
+vnoremap <C-k> :m '<-2<CR>gv=gv
+
 " ALE plugin configuration
 let b:ale_fixers = ['eslint', 'prettier']
 let b:ale_fix_on_save = 1 " enable format/fix on save
@@ -69,7 +80,7 @@ if has('win32')
   let $PATH = 'C:\Users\Christopher\scoop\apps\git\current\usr\bin;' . $PATH
 endif
 
-" Function to source only if file exists {
+" SourceIfExists sources a file only if file exists {
 function! SourceIfExists(file)
   if filereadable(expand(a:file))
     exe 'source' a:file
