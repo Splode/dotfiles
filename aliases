@@ -8,6 +8,14 @@ fi
 alias myip="curl icanhazip.com"
 alias checknet="ping -c 4 8.8.8.8"
 
+# git
+alias gss="git status"
+alias gpu="git push"
+alias gpl="git pull"
+alias gpe="git fetch origin"
+alias glog="git log --oneline"
+alias gaa="git add *"
+
 # package updates
 alias up="sudo apt update"
 alias lu="apt list --upgradable"
