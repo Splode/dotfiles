@@ -12,7 +12,11 @@ Plug 'junegunn/limelight.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'mzlogin/vim-markdown-toc'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'preservim/nerdtree'
+Plug 'ryanoasis/vim-devicons'
 Plug 'sheerun/vim-polyglot'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
@@ -24,6 +28,7 @@ colorscheme dracula " dracula plugin
 set autoindent      " indent according to previous line
 set backspace=2     " start, indent
 set cmdheight=2     " give more space for displaying messages
+set encoding=UTF-8  " default encoding
 set expandtab       " expand tabs to spaces
 set hidden          " switch between buffers without having to save first
 set number          " show line numbers
@@ -32,6 +37,7 @@ set scrolloff=8     " auto-scroll margin
 set shiftwidth=2    " number of spaces when shift indenting
 set smartindent     " auto-indent
 set softtabstop=2   " number of spaces in tab when editing
+set splitright      " split new panes to the right
 set tabstop=2       " number of visual spaces per tab
 set termguicolors   " enable true colors support
 set ttyfast         " faster redrawing
@@ -65,6 +71,9 @@ vnoremap <leader>y "+y
 " yank entire file contents to system clipboard
 nnoremap <leader>Y gg"+yG
 
+" toggle NerdTree file explorer
+nnoremap <leader>n :NERDTreeToggle<CR>
+
 " move current line up or down
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
@@ -82,8 +91,10 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 " use git-bash on Windows to enable previews for plugins like fzf, ripgrep
+" set the default shell to powershell
 if has('win32')
   let $PATH = 'C:\Users\Christopher\scoop\apps\git\current\usr\bin;' . $PATH
+  set shell=pwsh
 endif
 
 " SourceIfExists sources a file only if file exists {
@@ -96,3 +107,4 @@ endfunction
 
 " source coc.vim settings, if present
 call SourceIfExists("~/.coc.vim")
+

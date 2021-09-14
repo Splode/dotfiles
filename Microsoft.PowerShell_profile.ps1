@@ -4,6 +4,12 @@ Invoke-Expression (&starship init powershell)
 # Use fd in conjunction with fzf
 $Env:FZF_DEFAULT_COMMAND="fd --type f"
 
+# Big Ass Text File Location
+$Env:BATF_LOC="$Env:USERPROFILE\.batf.md"
+
+# Set bat syntax theme
+$Env:BAT_THEME="Dracula"
+
 # Register aliases
 New-Alias -Name ll -Value Get-ChildItem
 New-Alias -Name myip -Value getIP
