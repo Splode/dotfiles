@@ -24,7 +24,7 @@
                 "tabTitle": "Cmder"
             },
             {
-                "acrylicOpacity": 0.84999999999999998,
+                "opacity": 0.84999999999999998,
                 "colorScheme": "Dracula",
                 "guid": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
                 "hidden": false,
@@ -60,7 +60,7 @@
                 "source": "Windows.Terminal.Azure"
             },
             {
-                "acrylicOpacity": 0.84999999999999998,
+                "opacity": 0.84999999999999998,
                 "colorScheme": "Dracula",
                 "experimental.retroTerminalEffect": false,
                 "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",

@@ -4,14 +4,13 @@ Invoke-Expression (&starship init powershell)
 # Use fd in conjunction with fzf
 $Env:FZF_DEFAULT_COMMAND="fd --type f"
 
-# Big Ass Text File Location
-$Env:BATF_LOC="$Env:USERPROFILE\.batf.md"
-
 # Set bat syntax theme
 $Env:BAT_THEME="Dracula"
 
+# Enable color output for Mage
+$Env:MAGEFILE_ENABLE_COLOR=1
+
 # Register aliases
-New-Alias -Name ll -Value Get-ChildItem
 New-Alias -Name myip -Value getIP
 New-Alias -Name gfe -Value gitFetch
 New-Alias -Name glog -Value gitLog
@@ -23,6 +22,13 @@ New-Alias -Name gls -Value gitBranchList
 New-Alias -Name touch -Value createFile
 New-Alias -Name sup -Value scoopUpdate -Description "Update scoop repositories"
 New-Alias -Name supg -Value scoopUpgrade
+
+# lsd
+Set-Alias -Name ls -Value list
+New-Alias -Name l -Value listLong
+New-Alias -Name ll -Value listAll
+New-Alias -Name la -Value listHidden
+New-Alias -Name lt -Value listTree
 
 # Create a new, empty file
 function createFile {
@@ -73,3 +79,22 @@ function scoopUpgrade {
   scoop update *
 }
 
+function list {
+  lsd $args
+}
+
+function listLong {
+  lsd -l $args
+}
+
+function listAll {
+  lsd -la $args
+}
+
+function listHidden {
+  lsd -a $args
+}
+
+function listTree {
+  lsd --tree $args
+}
