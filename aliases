@@ -1,8 +1,9 @@
-# use exa if available
-if [ -x "$(command -v exa)" ]; then
-	alias ll="exa -al"
-	alias ls="exa"
-	alias lt="exa -T"
+# use lsd if available
+if [ -x "$(command -v lsd)" ]; then
+	alias ls="lsd"
+	alias l="lsd -l"
+	alias ll="lsd -al"
+	alias lt="lsd --tree"
 fi
 
 alias myip="curl icanhazip.com"
@@ -20,6 +21,9 @@ alias gaa="git add *"
 alias up="sudo apt update"
 alias lu="apt list --upgradable"
 alias upg="sudo apt upgrade -y"
+
+# (h)istory (c)opy performs a fuzzy search on the history and copies the selected line to the clipboard
+alias ,hc="history | fzf | cut -c 8- | tr -d '\n' | xclip -selection clipboard"
 
 # ffmpeg
 if [ -x "$(command -v ffmpeg)" ]; then
