@@ -10,6 +10,9 @@ $Env:BAT_THEME="Dracula"
 # Enable color output for Mage
 $Env:MAGEFILE_ENABLE_COLOR=1
 
+# Default editor
+$Env:EDITOR="$Env:USERPROFILE\scoop\shims\vim.EXE"
+
 # Register aliases
 New-Alias -Name myip -Value getIP
 New-Alias -Name gfe -Value gitFetch
@@ -22,6 +25,7 @@ New-Alias -Name gls -Value gitBranchList
 New-Alias -Name touch -Value createFile
 New-Alias -Name sup -Value scoopUpdate -Description "Update scoop repositories"
 New-Alias -Name supg -Value scoopUpgrade
+New-Alias -Name cal -Value Get-Calendar # requires https://github.com/jdhitsolutions/PSCalendar
 
 # lsd
 Set-Alias -Name ls -Value list
